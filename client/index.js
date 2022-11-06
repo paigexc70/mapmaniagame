@@ -2,31 +2,68 @@ var gMap;
 
 function initMap() {
     gMap = new google.maps.Map(document.getElementById('myMapID'), {
-        center: {lat: 41.57, lng: -87.79}, 
-        zoom:3});
+        center: {lat: 38.93, lng: 35.54}, 
+        zoom:6,
+        zoomcontrol: "True",
+        gestureHandling: "cooperative",
+        panControl: "True",
+        panControlOptions: {
+            position:google.maps.ControlPosition.BOTTOM_RIGHT,
+        },
+        maxZoom: 11,
+        minZoom: 5,
+        zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_BOTTOM,
+        }
+        
+    });
     
-    var marker = new google.maps.Marker({position:{lat:48.86, lng:2.29}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:48.86, lng:2.29}, map:gMap,
+    icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    title: 'Eiffel Tower',});
     
 
-    var marker = new google.maps.Marker({position:{lat:51.51, lng:-0.12}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:51.51, lng:-0.12}, map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
     
-    var marker = new google.maps.Marker({position:{lat:29.97, lng:31.13}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:29.97, lng:31.13}, map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
 
-    var marker = new google.maps.Marker({position:{lat:40.75, lng:-73.98}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:40.75, lng:-73.98}, map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
 
-    var marker = new google.maps.Marker({position:{lat:-22.94, lng:-43.20}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:-22.94, lng:-43.20}, map:gMap, 
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
     
 
-    var marker = new google.maps.Marker({position:{lat:41.89, lng:12.49}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:41.89, lng:12.49}, map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
 
-    var marker = new google.maps.Marker({position:{lat:-33.85, lng:151.21}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:-33.85, lng:151.21}, map:gMap, 
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
 
-    var marker = new google.maps.Marker({position:{lat:27.98, lng:86.92}, map:gMap});
+    var marker = new google.maps.Marker
+    ({position:{lat:27.98, lng:86.92}, map:gMap, 
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    });
 
 
     google.maps.event.addListener(gMap, 'idle', function(){
@@ -39,7 +76,7 @@ function updateGame() {
     var zoomLevel = gMap.getZoom()
     var inBounds = false;
 
-    if (gMap.getBounds().contains({lat:41.57,lng:-87.79})){
+    if (gMap.getBounds().contains({lat:48.86,lng:2.29})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
