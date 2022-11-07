@@ -22,7 +22,7 @@ function initMap() {
        
     });
 
-    window.alert("Find all eight monuments. Follow the hint chart click on the correct flag.")
+    window.alert("Find all eight monuments. Follow the hint chart click on the correct flag. There will be more flags than you need")
     var infoWindowOptions = {
             content:'Hello! Please click and drag to move. You can only zoom out so far so try not to get lost! Find all 8 places and click.',
             map: gMap,
@@ -32,7 +32,60 @@ function initMap() {
 
     var infoWindow = new google.maps.InfoWindow(infoWindowOptions)
 
+    //False marks
+    var markerOptions = {
+        position: new google.maps.LatLng(37.97,23.72),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+    }
 
+    var markerOptions2 = {
+        position: new google.maps.LatLng(27.17,78.04),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+        
+    }
+
+    var markerOptions3 = {
+        position: new google.maps.LatLng(25.19,55.27),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+    }
+
+    var markerOptions4 = {
+        position: new google.maps.LatLng(-13.16,-72.54),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+    }
+
+    var markerOptions5 = {
+        position: new google.maps.LatLng(43.88,-103.45),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+    }
+
+    var markerOptions6 = {
+        position: new google.maps.LatLng(55.75,37.62),
+        map:gMap,
+        icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        animation: google.maps.Animation.BOUNCE
+    }
+
+    var marker = new google.maps.Marker(markerOptions)
+    var marker = new google.maps.Marker(markerOptions2)
+    var marker = new google.maps.Marker(markerOptions3)
+    var marker = new google.maps.Marker(markerOptions4)
+    var marker = new google.maps.Marker(markerOptions5)
+    var marker = new google.maps.Marker(markerOptions6)
+
+
+
+    //Real Marks
     var marker1 = new google.maps.Marker
         ({position:{lat:29.97, lng:31.13}, map:gMap,
             icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
