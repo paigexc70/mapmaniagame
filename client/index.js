@@ -1,5 +1,7 @@
 var gMap;
 
+let score = 0;
+
 function initMap() {
     gMap = new google.maps.Map(document.getElementById('myMapID'), {
         center: {lat: 38.93, lng: 35.54}, 
@@ -40,9 +42,6 @@ function initMap() {
     marker1.addListener('click', function() {
         window.alert("Correct!");
     });
-
-    
-
     
     var marker2 = new google.maps.Marker
     ({position:{lat:48.86, lng:2.29}, map:gMap,
@@ -51,13 +50,19 @@ function initMap() {
     animation: google.maps.Animation.BOUNCE
 
     });
-    
+    marker2.addListener('click', function() {
+        window.alert("Correct!");
+    });
+
     var marker3 = new google.maps.Marker
         ({position:{lat:40.75, lng:-73.98}, map:gMap,
             icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
             title:'Times Square',
             animation: google.maps.Animation.BOUNCE
 
+        });
+        marker3.addListener('click', function() {
+            window.alert("Correct!");
         });
 
     var marker4 = new google.maps.Marker
@@ -67,13 +72,19 @@ function initMap() {
         animation: google.maps.Animation.BOUNCE
 
     });
-    
+    marker4.addListener('click', function() {
+        window.alert("Correct!");
+    });
+
     var marker5 = new google.maps.Marker
     ({position:{lat:-33.85, lng:151.21}, map:gMap, 
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title:'Sydney Opera House',
         animation: google.maps.Animation.BOUNCE
 
+    });
+    marker5.addListener('click', function() {
+        window.alert("Correct!");
     });
 
     var marker6 = new google.maps.Marker
@@ -83,7 +94,9 @@ function initMap() {
         animation: google.maps.Animation.BOUNCE
 
     });
-    
+    marker6.addListener('click', function() {
+        window.alert("Correct!");
+    });
 
     var marker7 = new google.maps.Marker
     ({position:{lat:41.89, lng:12.49}, map:gMap,
@@ -91,7 +104,9 @@ function initMap() {
         title:'Colosseum',
         animation: google.maps.Animation.BOUNCE
     });
-
+    marker7.addListener('click', function() {
+        window.alert("Correct!");
+    });
 
 
     var marker8 = new google.maps.Marker
@@ -101,8 +116,10 @@ function initMap() {
         animation: google.maps.Animation.BOUNCE
         
     });
+    marker8.addListener('click', function() {
+        window.alert("Correct!");
+    });
 
-    let markerOptions
 
     google.maps.event.addListener(gMap, 'idle', function(){
         updateGame()
@@ -161,9 +178,9 @@ function initApplication() {
 }
 
 
-function SetScore(newScore) {
- // document.getElementById().vlaue = newScore;
- }
+//function SetScore(score) {
+ 
+// }
 
 
 // for th var marker
