@@ -6,56 +6,79 @@ function initMap() {
         zoom:6,
         maxZoom: 11,
         minZoom: 5,
-        zoomcontrol: "True",
+        zoomcontrol: true,
         zoomControlOptions: {
             position: google.maps.ControlPosition.LEFT_CENTER,
         },
         gestureHandling: "cooperative",
         mapTypeId: "hybrid",
-        mapTypeControl: "True",
+        mapTypeControl: true,
         mapTypeControl: {
             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
         },
-        scaleControl: "True"
+        scaleControl: true
        
     });
 
     window.alert("Find all eight monuments. Follow the hint chart and search in order.")
+    var infoWindowOptions = {
+            content:'Hello! Please click and drag to move. You can only zoom out so far so try not to get lost! Find all 8 places and click.',
+            map: gMap,
+            position:  {lat: 38.93, lng: 35.54},
+            shouldFocus: false
+        }
+
+    var infoWindow = new google.maps.InfoWindow(infoWindowOptions)
+
 
     var marker1 = new google.maps.Marker
         ({position:{lat:29.97, lng:31.13}, map:gMap,
             icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
             title:'Pyramids',
+            animation: google.maps.Animation.BOUNCE
         });
 
+    
+
+    
     var marker2 = new google.maps.Marker
     ({position:{lat:48.86, lng:2.29}, map:gMap,
     icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
     title: 'Eiffel Tower',
+    animation: google.maps.Animation.BOUNCE
+
     });
     
     var marker3 = new google.maps.Marker
         ({position:{lat:40.75, lng:-73.98}, map:gMap,
             icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
             title:'Times Square',
+            animation: google.maps.Animation.BOUNCE
+
         });
 
     var marker4 = new google.maps.Marker
     ({position:{lat:51.51, lng:-0.12}, map:gMap,
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title: 'Big Ben',
+        animation: google.maps.Animation.BOUNCE
+
     });
     
     var marker5 = new google.maps.Marker
     ({position:{lat:-33.85, lng:151.21}, map:gMap, 
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title:'Sydney Opera House',
+        animation: google.maps.Animation.BOUNCE
+
     });
 
     var marker6 = new google.maps.Marker
     ({position:{lat:-22.94, lng:-43.20}, map:gMap, 
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title:'Christ The Redeemer',
+        animation: google.maps.Animation.BOUNCE
+
     });
     
 
@@ -63,6 +86,7 @@ function initMap() {
     ({position:{lat:41.89, lng:12.49}, map:gMap,
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title:'Colosseum',
+        animation: google.maps.Animation.BOUNCE
     });
 
 
@@ -71,6 +95,8 @@ function initMap() {
     ({position:{lat:27.98, lng:86.92}, map:gMap, 
         icon:"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         title:'Mount Everest',
+        animation: google.maps.Animation.BOUNCE
+        
     });
 
     
