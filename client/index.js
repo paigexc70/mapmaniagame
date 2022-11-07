@@ -14,13 +14,13 @@ function initMap() {
         mapTypeId: "hybrid",
         mapTypeControl: true,
         mapTypeControl: {
-            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
         },
         scaleControl: true
        
     });
 
-    window.alert("Find all eight monuments. Follow the hint chart and search in order.")
+    window.alert("Find all eight monuments. Follow the hint chart click on the correct flag.")
     var infoWindowOptions = {
             content:'Hello! Please click and drag to move. You can only zoom out so far so try not to get lost! Find all 8 places and click.',
             map: gMap,
@@ -37,6 +37,9 @@ function initMap() {
             title:'Pyramids',
             animation: google.maps.Animation.BOUNCE
         });
+    marker1.addListener('click', function() {
+        window.alert("Correct!");
+    });
 
     
 
@@ -99,8 +102,7 @@ function initMap() {
         
     });
 
-    
-	city = document.querySelector( '.reg-input-city' );
+    let markerOptions
 
     google.maps.event.addListener(gMap, 'idle', function(){
         updateGame()
@@ -158,3 +160,12 @@ function initApplication() {
     console.log('Map mania - starting');
 }
 
+
+function SetScore(newScore) {
+ // document.getElementById().vlaue = newScore;
+ }
+
+
+// for th var marker
+//  ++Score
+//SetScore()
