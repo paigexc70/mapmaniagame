@@ -230,10 +230,20 @@ function initApplication() {
     console.log('Map mania - starting');
 }
 
+document.getElementById("cheats").addEventListener("dblclick", fun);
+function fun() {
+document.getElementById("cheats").innerHTML = " Answers: Eiffel Tower, Great Pyramids, Times Sqaure, Big Ben, Sydney Opera, Christ the redeemer, Colloseum, Mt. Everest ";
+}
 
-//function SetScore(score) {
- 
-// }
+function SetScore(score) {
+    
+ }
+
+
+document.getElementById("score").addEventListener("click", ShowScore);
+function ShowScore(score){
+document.getElementById("score").innerHTML = "Your Score:";    
+}
 
 
 // for th var marker
