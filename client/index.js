@@ -22,7 +22,7 @@ function initMap() {
        
     });
 
-    window.alert("Find all eight monuments. Follow the hint chart click on the correct flag. There will be more flags than you need")
+    window.alert("Find all eight monuments. Follow the hint chart click on the correct flag. There will be more flags than you need. Double click the Cheat button to win.")
     var infoWindowOptions = {
             content:'Hello! Please click and drag to move. You can only zoom out so far so try not to get lost! Find all 8 places and click.',
             map: gMap,
@@ -95,6 +95,7 @@ function initMap() {
     marker1.addListener('click', function() {
         window.alert("Correct!");
     });
+    marker1.addEventListener('click', SetScore);
     
     var marker2 = new google.maps.Marker
     ({position:{lat:48.86, lng:2.29}, map:gMap,
@@ -184,42 +185,42 @@ function updateGame() {
     var zoomLevel = gMap.getZoom()
     var inBounds = false;
 
+    if (gMap.getBounds().contains({lat:29.27,lng:31.13})){
+        inBounds = true;
+    }
+    console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
+
     if (gMap.getBounds().contains({lat:48.86,lng:2.29})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:52.41,lng:0.52})){
+    if (gMap.getBounds().contains({lat:40.75,lng:-73.98})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:41.06,lng:-111.97})){
+    if (gMap.getBounds().contains({lat:51.51,lng:-0.12})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:40.95,lng:-83.38})){
+    if (gMap.getBounds().contains({lat:-33.85,lng:151.21})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:38.54,lng:-89.85})){
+    if (gMap.getBounds().contains({lat:-22.94,lng:-43.20})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:52.48,lng:0.51})){
+    if (gMap.getBounds().contains({lat:41.89,lng:12.49})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
 
-    if (gMap.getBounds().contains({lat:40.95,lng:-87.62})){
-        inBounds = true;
-    }
-    console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
-
-    if (gMap.getBounds().contains({lat:40.11,lng:-88.21})){
+    if (gMap.getBounds().contains({lat:27.98,lng:86.92})){
         inBounds = true;
     }
     console.log("inBounds:"+inBounds+"zoomLevel:"+zoomLevel);
@@ -236,13 +237,13 @@ document.getElementById("cheats").innerHTML = " Answers: Eiffel Tower, Great Pyr
 }
 
 function SetScore(score) {
-    
+document.getElementById("score").innerText = "1";    
  }
 
 
-document.getElementById("score").addEventListener("click", ShowScore);
+
 function ShowScore(score){
-document.getElementById("score").innerHTML = "Your Score:";    
+  
 }
 
 
